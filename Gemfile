@@ -28,4 +28,5 @@ group :test do
 
 end
 
+gem "draper"
 gem "haml-rails"
