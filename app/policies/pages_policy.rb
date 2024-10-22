@@ -1,5 +1,5 @@
 class PagesPolicy < ApplicationPolicy
     def home?
-        true
+        user
     end
 end
