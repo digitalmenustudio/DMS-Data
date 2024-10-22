@@ -2,8 +2,8 @@ class UsersController < ApplicationController
   before_action :set_user, only: %i[edit update show destroy]
   before_action -> { authorize @user || User }
 
-  # decorates_assigned :user, :users
-  # add_controller_helpers :users, only: :index
+  decorates_assigned :user, :users
+  add_controller_helpers :users, only: :index
 
   def index
     @users = policy_scope(User).order(:email)
