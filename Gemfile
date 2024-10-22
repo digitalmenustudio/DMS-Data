@@ -30,3 +30,5 @@ end
 
 gem "draper"
 gem "haml-rails"
+gem "rails-i18n", "~> 7.0.0"
+gem "i18n-tasks"
