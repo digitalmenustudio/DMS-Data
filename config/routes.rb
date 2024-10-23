@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   resources :restaurants
   resources :daily_visits
+  resources :menu_access_logs
   
   root 'pages#home'
 end

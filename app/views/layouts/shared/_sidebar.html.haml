@@ -26,6 +26,30 @@
             %i.fa-solid.fa-calendar-alt
             = DailyVisit.model_name.human(count: 2)
 
+      - if policy(MenuAccessLog).index?
+        %li.nav-item
+          = link_to menu_access_logs_path, class: "nav-link #{controller_name == "menu_access_logs" ? "active" : ""}" do
+            %i.fa-solid.fa-clock
+            = MenuAccessLog.model_name.human(count: 2)
+
+      -# - if policy(TabClick).index?
+      -#   %li.nav-item
+      -#     = link_to admin_tab_clicks_path, class: "nav-link #{controller_name == "tab_clicks" ? "active" : ""}" do
+      -#       %i.fa-solid.fa-tags
+      -#       = TabClick.model_name.human(count: 2)
+
+      -# - if policy(Item).index?
+      -#   %li.nav-item
+      -#     = link_to admin_items_path, class: "nav-link #{controller_name == "items" ? "active" : ""}" do
+      -#       %i.fa-solid.fa-cart-shopping
+      -#       = Item.model_name.human(count: 2)
+
+      -# - if policy(Promotion).index?
+      -#   %li.nav-item
+      -#     = link_to admin_promotions_path, class: "nav-link #{controller_name == "promotions" ? "active" : ""}" do
+      -#       %i.fa-solid.fa-rectangle-ad
+      -#       = Promotion.model_name.human(count: 2)
+
       %hr.my-1
 
 
