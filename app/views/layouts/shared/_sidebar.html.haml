@@ -44,11 +44,11 @@
             %i.fa-solid.fa-cart-shopping
             = Item.model_name.human(count: 2)
 
-      -# - if policy(Promotion).index?
-      -#   %li.nav-item
-      -#     = link_to admin_promotions_path, class: "nav-link #{controller_name == "promotions" ? "active" : ""}" do
-      -#       %i.fa-solid.fa-rectangle-ad
-      -#       = Promotion.model_name.human(count: 2)
+      - if policy(Promotion).index?
+        %li.nav-item
+          = link_to promotions_path, class: "nav-link #{controller_name == "promotions" ? "active" : ""}" do
+            %i.fa-solid.fa-rectangle-ad
+            = Promotion.model_name.human(count: 2)
 
       %hr.my-1
 
