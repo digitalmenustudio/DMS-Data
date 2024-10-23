@@ -9,10 +9,17 @@ Rails.application.routes.draw do
 
   put :change_locale, controller: "application"
 
-  resources :restaurants
+  resources :restaurants do
+    member do 
+      post :upload_data
+    end
+  end
+  
   resources :daily_visits
   resources :menu_access_logs
   resources :tab_clicks
+  resources :items
+  resources :promotions
 
   root 'pages#home'
 end

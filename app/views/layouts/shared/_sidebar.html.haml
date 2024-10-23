@@ -38,11 +38,11 @@
             %i.fa-solid.fa-tags
             = TabClick.model_name.human(count: 2)
 
-      -# - if policy(Item).index?
-      -#   %li.nav-item
-      -#     = link_to admin_items_path, class: "nav-link #{controller_name == "items" ? "active" : ""}" do
-      -#       %i.fa-solid.fa-cart-shopping
-      -#       = Item.model_name.human(count: 2)
+      - if policy(Item).index?
+        %li.nav-item
+          = link_to items_path, class: "nav-link #{controller_name == "items" ? "active" : ""}" do
+            %i.fa-solid.fa-cart-shopping
+            = Item.model_name.human(count: 2)
 
       -# - if policy(Promotion).index?
       -#   %li.nav-item
