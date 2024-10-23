@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   put :change_locale, controller: "application"
 
   resources :restaurants
-
+  resources :daily_visits
+  
   root 'pages#home'
 end

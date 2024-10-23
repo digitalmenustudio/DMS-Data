@@ -8,6 +8,27 @@ en:
         password: Password
         password_confirmation: Password confirmation
         remember_me: Remember me
+      daily_visit:
+        date: Date
+        first_time_visitors: First Time Visitors
+        recurring_visitors: Recurring Visitors
+        average_time_spent: Average Time Spent (in minutes)
+        weekday: Weekday
+      menu_access_log:
+        day_of_week: Day of the Week
+        time_frame: Time Frame
+        visitors: Visitors
+      tab_click:
+        tab_name: Tab Name
+        clicks: Clicks
+      item:
+        name: Item Name
+        item_type: Item Type
+        clicks: Clicks
+        likes: Likes
+      promotion:
+        name: Promotion Name
+        view_count: View Count
     models:
       restaurant:
         one: Restaurant
@@ -15,6 +36,21 @@ en:
       user:
         one: User
         other: Users
+      daily_visit:
+        one: Daily Visit
+        other: Daily Visits
+      menu_access_log:
+        one: Menu Access Log
+        other: Menu Access Logs
+      tab_click:
+        one: Tab
+        other: Tabs
+      item:
+        one: Item
+        other: Items
+      promotion:
+        one: Promotion
+        other: Promotions
     notices:
       default:
         archived_successfully: "%{model} archived successfully"

@@ -1,0 +1,27 @@
+- model_class = DailyVisit
+- content_for :title do
+  %h1= t '.title', default: model_class.model_name.human
+
+%dl.row
+  %dt.col-sm-3= model_class.human_attribute_name :date
+  %dd.col-sm-9= @daily_visit.date
+  %dt.col-sm-3= model_class.human_attribute_name :weekday
+  %dd.col-sm-9= @daily_visit.weekday
+  %dt.col-sm-3= model_class.human_attribute_name :sales
+  %dd.col-sm-9= @daily_visit.sales
+  %dt.col-sm-3= model_class.human_attribute_name :first_time_visitors
+  %dd.col-sm-9= @daily_visit.first_time_visitors
+  %dt.col-sm-3= model_class.human_attribute_name :recurring_visitors
+  %dd.col-sm-9= @daily_visit.recurring_visitors
+  %dt.col-sm-3= model_class.human_attribute_name :average_time_spent
+  %dd.col-sm-9= format_time_spent(@daily_visit.minutes, @daily_visit.seconds)
+
+- if policy(@daily_visit).index?
+  = link_to daily_visits_path, class: "btn btn-outline-secondary mx-1" do
+    %i.fa-solid.fa-chevron-left
+    = t('.back', default: t("helpers.links.back"))
+
+- if policy(@daily_visit).edit?
+  = link_to edit_daily_visit_path(@daily_visit), class: "btn btn-primary mx-1" do
+    %i.fa-solid.fa-edit
+    = t('.edit', default: t("helpers.links.edit"))
