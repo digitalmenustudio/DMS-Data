@@ -1,6 +1,6 @@
 #sidebar-wrapper.p-3{style: "background-color: burlywood" }
-  -# = link_to root_path do
-    -# = image_tag "LogoAtie&Hatietspbg.png", class: "img-fluid p-3", id: "sidebar-logo", data: { "turbo-permanent": true }
+  = link_to root_path, class: "text-decoration-none text-white text-center" do
+    = image_tag "logo.png", class: "img-fluid p-3 w-75 rounded-circle", id: "sidebar-logo", data: { "turbo-permanent": true }
 
   .fs-4.my-2.fw-bold.text-center= t 'app_name'
   %hr.my-1
