@@ -2,11 +2,16 @@
 en:
   activerecord:
     attributes:
+      restaurant:
+        launch_date: Launch Date
       user:
         password: Password
         password_confirmation: Password confirmation
         remember_me: Remember me
     models:
+      restaurant:
+        one: Restaurant
+        other: Restaurants
       user:
         one: User
         other: Users

@@ -2,10 +2,16 @@
 fr:
   activerecord:
     attributes:
+      restaurant:
+        launch_date: Date de lancement
+      user:
         password: Mot de passe
         password_confirmation: Confirmation du mot de passe
         remember_me: Se souvenir de moi
     models:
+      restaurant:
+        one: Restaurant
+        other: Restaurants
       user:
         one: Utilisateur
         other: Utilisateurs

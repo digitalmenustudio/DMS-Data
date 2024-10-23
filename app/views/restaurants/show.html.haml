@@ -1,0 +1,37 @@
+- model_class = Restaurant
+- content_for :title do
+  %h1= t '.title', :default => model_class.model_name.human
+
+%dl.row
+  %dt.col-sm-3= model_class.human_attribute_name :name
+  %dd.col-sm-9= @restaurant.name
+  %dt.col-sm-3= model_class.human_attribute_name :launch_date
+  %dd.col-sm-9= @restaurant.launch_date
+
+- if policy(@restaurant).index?
+  = link_to restaurants_path, class: "btn btn-outline-secondary mx-1" do
+    %i.fa-solid.fa-chevron-left
+    = t('.back', :default => t("helpers.links.back"))
+
+- if policy(@restaurant).edit?
+  = link_to edit_restaurant_path(@restaurant), class: "btn btn-primary mx-1" do
+    %i.fa-solid.fa-edit
+    = t('.edit', :default => t("helpers.links.edit"))
+
+-# - if policy(restaurant).upload_data?
+-#   = link_to '#', id: 'import-csv', class: 'btn btn-secondary mx-1', data: { bs_toggle: 'modal', bs_target: '#csvUploadModal' } do
+-#     = content_tag(:i, '', class: 'fa-solid fa-file-arrow-up')
+    
+-#   = form_with url: upload_data_admin_restaurant_path(restaurant), multipart: true, local: true do |form|
+-#     .modal.fade#csvUploadModal
+-#       .modal-dialog
+-#         .modal-content
+-#           .modal-header
+-#             %h5.modal-title Import CSV
+-#           .modal-body
+-#             .row.mb-4
+-#               = form.label :day, 'Select Day of the Week'
+-#               = form.select :day, options_for_select(Date::DAYNAMES.map(&:downcase), selected: 'monday'), {}, class: 'form-control'
+-#             = form.file_field :file
+-#           .modal-footer
+-#             = form.submit 'Upload', class: 'btn btn-primary'
