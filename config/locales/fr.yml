@@ -1,0 +1,43 @@
+fr:
+  hello: "Salut world"
+  app_name: "DMS Data"
+  helpers:
+    filters:
+      active: Activé
+      all: Tous
+      inactive: Désactivé
+    links:
+      activate: Activer
+      add: Ajouter
+      add_to_cart: Ajouter au panier
+      back: Retour
+      cancel: Annuler
+      destroy: Supprimer
+      discard: Désactiver
+      edit: Modifier
+      export: Exporter
+      new: Nouveau
+      reset: Réinitialiser les filtres
+      search: Rechercher
+      sign_out: Se déconnecter
+      learn_more: "En savoir plus"
+      see_our_catalog: "Voir tout le catalogue"
+    submit:
+      create: Créer
+      filter: Filtrer
+      submit: Enregistrer
+      update: Modifier
+    titles:
+      edit: Modifier %{model}
+      new: Nouveau %{model}
+      newf: Nouvelle %{model}
+      newm: Nouvel %{model}
+    format:
+      money: "%{val}$"
+  layouts:
+    shared:
+      sidebar:
+        administration: "Administration"
+        categorizations: "Catégorisations"
+        change_language: "EN"
+ 
