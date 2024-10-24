@@ -22,6 +22,7 @@ module UploadDataServices
         if promotion.new_record?
           # If the record is new, set the event_count
           promotion.view_count = @event_count
+          promotion.title = normalized_name
         else
           # If the record exists, increment the event_count
           promotion.view_count += @event_count

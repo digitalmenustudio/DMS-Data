@@ -6,6 +6,7 @@ class CreateItems < ActiveRecord::Migration[7.0]
       t.string :item_type, null: false # Item type: cocktail or food
       t.integer :clicks, default: 0, null: false # Number of clicks on the item
       t.integer :likes, default: 0, null: false # Number of likes on the item
+      t.string :title
 
       t.timestamps
     end

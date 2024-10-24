@@ -37,6 +37,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_23_201343) do
     t.string "item_type", null: false
     t.integer "clicks", default: 0, null: false
     t.integer "likes", default: 0, null: false
+    t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["restaurant_id", "name", "item_type"], name: "index_items_on_restaurant_id_and_name_and_item_type", unique: true
@@ -57,6 +58,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_23_201343) do
   create_table "promotions", force: :cascade do |t|
     t.bigint "restaurant_id", null: false
     t.string "name", null: false
+    t.string "title"
     t.integer "view_count", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

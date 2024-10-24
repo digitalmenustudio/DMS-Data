@@ -17,8 +17,12 @@ module UploadDataServices
         normalized_name = normalize_item_name
   
         # Find or initialize the item by restaurant and name (ignoring item_type for now)
-        item = Item.find_or_initialize_by(restaurant: @restaurant, name: normalized_name, item_type: "Food")
-  
+        item = Item.find_or_initialize_by(restaurant: @restaurant, name: normalized_name)
+        
+        if item.new_record?
+          item.title = normalized_name 
+          item.item_type = "Food"
+        end
         # Increment clicks or likes based on the event type (view or like)
         if @item_name.start_with?('like_item')
           # Increment likes for like_item events

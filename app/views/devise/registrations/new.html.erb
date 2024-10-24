@@ -1,27 +1,102 @@
-<div class="container"> 
-  <h2>Sign up</h2>
+<div class="container d-flex align-items-center justify-content-center min-vh-100 signup-page">
+  <style>
+    .signup-page {
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      position: relative;
+      overflow: hidden;
+    }
 
-  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= f.error_notification %>
+    .signup-page::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent);
+      opacity: 0.2;
+    }
 
-    <div class="form-inputs">
-      <%= f.input :email,
-                  required: true,
-                  autofocus: true,
-                  input_html: { autocomplete: "email" }%>
-      <%= f.input :password,
-                  required: true,
-                  hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                  input_html: { autocomplete: "new-password" } %>
-      <%= f.input :password_confirmation,
-                  required: true,
-                  input_html: { autocomplete: "new-password" } %>
-    </div>
+    .signup-box {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 15px;
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
 
-    <div class="form-actions">
-      <%= f.button :submit, "Sign up" %>
-    </div>
-  <% end %>
+    .logo {
+      width: 150px;
+      animation: pulse 2s infinite;
+    }
 
-  <%= render "devise/shared/links" %>
+    .form-control {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #fff;
+    }
+
+    .form-control:focus {
+      background: rgba(255, 255, 255, 0.2);
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+
+    .btn-primary {
+      background-color: #0f89cc;
+      border-color: #0f89cc;
+      transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    .btn-primary:hover {
+      background-color: #0d6efd;
+      box-shadow: 0 0 15px rgba(13, 110, 253, 0.5);
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+  </style>
+
+  <div class="signup-box text-center p-5">
+    <img src="<%= asset_path('logo.png') %>" alt="Logo" class="img-fluid logo mb-4">
+    <h2 class="text-white mb-4">Sign up to Join</h2>
+
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= f.error_notification %>
+
+      <div class="form-inputs mb-3">
+        <%= f.input :email,
+                    required: true,
+                    autofocus: true,
+                    input_html: { autocomplete: "email", class: "form-control bg-dark text-white" },
+                    label_html: { class: "text-white" } %>
+
+        <%= f.input :password,
+                    required: true,
+                    hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                    input_html: { autocomplete: "new-password", class: "form-control bg-dark text-white" },
+                    label_html: { class: "text-white" } %>
+
+        <%= f.input :password_confirmation,
+                    required: true,
+                    input_html: { autocomplete: "new-password", class: "form-control bg-dark text-white" },
+                    label_html: { class: "text-white" } %>
+      </div>
+
+      <div class="form-actions">
+        <%= f.button :submit, "Sign up", class: "btn btn-primary btn-block btn-lg" %>
+      </div>
+    <% end %>
+
+    <%= render "devise/shared/links" %>
+  </div>
 </div>

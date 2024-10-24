@@ -64,6 +64,7 @@ en:
     id: Id
     name: Name
     updated_at: Updated at
+    title: Title
   will_paginate:
     page_entries_info:
       multi_page_html: Displaying of %{from} - %{to} on %{count} %{model}

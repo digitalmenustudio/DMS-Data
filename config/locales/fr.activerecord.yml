@@ -64,6 +64,7 @@ fr:
     id: Identifiant
     name: Nom
     updated_at: Modifié le
+    title: Titre
   will_paginate:
     page_entries_info:
       multi_page_html: Affichage de %{from} - %{to} sur %{count} %{model}
