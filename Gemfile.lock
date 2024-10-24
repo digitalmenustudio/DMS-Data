@@ -104,6 +104,10 @@ GEM
       warden (~> 1.2.3)
     devise-i18n (1.12.1)
       devise (>= 4.9.0)
+    dotenv (3.1.4)
+    dotenv-rails (3.1.4)
+      dotenv (= 3.1.4)
+      railties (>= 6.1)
     draper (4.0.2)
       actionpack (>= 5.0)
       activemodel (>= 5.0)
@@ -297,6 +301,7 @@ DEPENDENCIES
   debug
   devise
   devise-i18n
+  dotenv-rails
   draper
   haml-rails
   i18n-tasks

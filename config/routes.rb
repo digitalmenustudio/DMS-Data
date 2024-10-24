@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  # Devise for user authentication
   devise_for :users
   
   resources :users do
@@ -22,4 +23,14 @@ Rails.application.routes.draw do
   resources :promotions
 
   root 'pages#home'
+
+  namespace :api do
+    namespace :v1 do
+      resources :items, only: :index
+      resources :daily_visits, only: :index
+      resources :menu_access_logs, only: :index
+      resources :tab_clicks, only: :index
+      resources :promotions, only: :index
+    end
+  end
 end

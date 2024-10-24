@@ -15,6 +15,7 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
 
 group :development, :test do
+  gem 'dotenv-rails'
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
 end
 
