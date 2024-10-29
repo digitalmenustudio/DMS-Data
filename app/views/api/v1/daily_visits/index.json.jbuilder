@@ -6,5 +6,4 @@ json.array! @daily_visits do |visit|
   json.recurring_visitors visit.recurring_visitors
   json.minutes visit.minutes
   json.seconds visit.seconds
-  json.sales visit.sales
 end

@@ -68,6 +68,9 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_23_201343) do
   create_table "restaurants", force: :cascade do |t|
     t.string "name"
     t.date "launch_date"
+    t.string "sku"
+    t.integer "total_visitors"
+    t.string "average_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -9,5 +9,5 @@ class Restaurant < ApplicationRecord
     has_many :items, dependent: :destroy
     has_many :promotions, dependent: :destroy
 
-    validates :launch_date, :name, presence: true
+    validates :launch_date, :name, :sku, presence: true
 end

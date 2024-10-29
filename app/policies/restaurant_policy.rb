@@ -6,7 +6,7 @@ class RestaurantPolicy < ApplicationPolicy
   end
 
   def permitted_attributes
-    %i[name launch_date]
+    %i[name launch_date sku total_visitors average_time]
   end
 end
 

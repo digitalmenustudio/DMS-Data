@@ -4,6 +4,12 @@
       = f.input :name, input_html: { autocomplete: "off" }
     .col-md-6
       = f.input :launch_date
+    .col-md-6
+      = f.input :sku
+    .col-md-6
+      = f.input :total_visitors
+    .col-md-6
+      = f.input :average_time
 
   = f.submit t("helpers.submit.submit", default: "Submit"), class: "btn btn-success"
   = link_to t('.cancel', default: t("helpers.links.cancel")), restaurants_path, class: "btn btn-outline-secondary"
