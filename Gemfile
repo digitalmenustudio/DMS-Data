@@ -40,3 +40,4 @@ gem "pundit"
 gem "pg_search"
 gem "will_paginate"
 gem "will_paginate-bootstrap-style"
+gem "dockerfile-rails", ">= 1.6", :group => :development

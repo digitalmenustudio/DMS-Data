@@ -14,5 +14,6 @@
     "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.3",
     "sass": "^1.80.3"
-  }
+  },
+  "packageManager": "yarn@1.22.21"
 }
