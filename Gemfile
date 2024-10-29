@@ -39,5 +39,6 @@ gem "devise-i18n"
 gem "pundit"
 gem "pg_search"
 gem "will_paginate"
+gem 'rack-cors'
 gem "will_paginate-bootstrap-style"
 gem "dockerfile-rails", ">= 1.6", :group => :development
