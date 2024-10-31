@@ -43,8 +43,8 @@ module UploadDataServices
         case time_frame
         when 'midnight-3am' || '00am-3am'
           '00:00-03:00'
-        when '3am-3pm' || '3am-15pm'
-          '03:00-15:00'
+        when '3am-3pm' || '3am-15pm' || '3am-4pm'
+          '03:00-16:00'
         else
           # Normalize other time frames like '2230-2300' or '1600-1630'
           time_frame.split('-').map { |t| format_time(t) }.join('-')

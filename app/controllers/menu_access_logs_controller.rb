@@ -34,7 +34,7 @@ class MenuAccessLogsController < ApplicationController
     @menu_access_log.assign_attributes(menu_access_log_params)
 
     if @menu_access_log.save
-      redirect_to _access_logs_path, notice: update_successful_notice
+      redirect_to menu_access_logs_path, notice: update_successful_notice
     else
       render :edit, status: :unprocessable_entity
     end
