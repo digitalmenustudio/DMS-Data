@@ -9,13 +9,12 @@ class Api::V1::BaseController < ApplicationController
   
     private
   
-    # This method validates the API key from the request header
-    # def validate_api_key
-    #   api_key = request.headers['X-Api-Key']
-    #   if api_key.blank? || api_key != ENV.fetch('API_KEY')
-    #     render json: { error: 'Unauthorized' }, status: :unauthorized
-    #   end
-    # end
+    def validate_api_key
+      api_key = request.headers['X-Api-Key']
+      if api_key.blank? || api_key != ENV.fetch('API_KEY')
+        render json: { error: 'Unauthorized' }, status: :unauthorized
+      end
+    end
   
     # This method sets the restaurant based on the restaurant_id sent in the request
     def set_restaurant
