@@ -4,7 +4,7 @@ class Api::V1::BaseController < ApplicationController
     skip_after_action :verify_authorized, only: :index
     skip_after_action :verify_policy_scoped, only: :index
   
-    # before_action :validate_api_key
+    before_action :validate_api_key
     before_action :set_restaurant
   
     private
