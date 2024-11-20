@@ -1,0 +1,20 @@
+- model_class = Insight
+
+- content_for :title do
+  %h1= t('.title', default: model_class.model_name.human)
+
+%dl.row
+  %dt.col-sm-3= model_class.human_attribute_name(:title)
+  %dd.col-sm-9= @insight.title
+  %dt.col-sm-3= model_class.human_attribute_name(:description)
+  %dd.col-sm-9= @insight.description
+
+- if policy(@insight).index?
+  = link_to insights_path, class: "btn btn-outline-secondary mx-1" do
+    %i.fa-solid.fa-chevron-left
+    = t('.back', default: t("helpers.links.back"))
+
+- if policy(@insight).edit?
+  = link_to edit_insight_path(@insight), class: "btn btn-primary mx-1" do
+    %i.fa-solid.fa-edit
+    = t('.edit', default: t("helpers.links.edit"))

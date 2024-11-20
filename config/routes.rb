@@ -21,6 +21,8 @@ Rails.application.routes.draw do
   resources :tab_clicks
   resources :items
   resources :promotions
+  resources :insights
+
 
   root 'pages#home'
 
@@ -32,6 +34,7 @@ Rails.application.routes.draw do
       resources :menu_access_logs, only: :index
       resources :tab_clicks, only: :index
       resources :promotions, only: :index
+      resources :insights, only: :index
     end
   end
 end

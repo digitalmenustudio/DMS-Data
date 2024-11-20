@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_10_23_201343) do
+ActiveRecord::Schema[7.0].define(version: 2024_11_20_230924) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
   enable_extension "plpgsql"
@@ -29,6 +29,15 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_23_201343) do
     t.datetime "updated_at", null: false
     t.index ["date"], name: "index_daily_visits_on_date"
     t.index ["restaurant_id"], name: "index_daily_visits_on_restaurant_id"
+  end
+
+  create_table "insights", force: :cascade do |t|
+    t.bigint "restaurant_id", null: false
+    t.text "description", null: false
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["restaurant_id"], name: "index_insights_on_restaurant_id"
   end
 
   create_table "items", force: :cascade do |t|
@@ -100,6 +109,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_23_201343) do
   end
 
   add_foreign_key "daily_visits", "restaurants"
+  add_foreign_key "insights", "restaurants"
   add_foreign_key "items", "restaurants"
   add_foreign_key "menu_access_logs", "restaurants"
   add_foreign_key "promotions", "restaurants"

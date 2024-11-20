@@ -1,0 +1,9 @@
+= simple_form_for @insight do |f|
+  .row.pb-2
+    .col-md-12
+      = f.input :title
+    .col-md-12
+      = f.input :description, input_html: { rows: 5, autocomplete: "off", placeholder: "Enter your insight here" }
+
+  = f.submit t("helpers.submit.submit", default: "Submit"), class: "btn btn-success"
+  = link_to t('.cancel', default: t("helpers.links.cancel")), insights_path, class: "btn btn-outline-secondary"

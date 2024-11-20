@@ -1,4 +1,3 @@
----
 fr:
   activerecord:
     attributes:
@@ -29,6 +28,8 @@ fr:
       promotion:
         name: Nom de la promotion
         view_count: Nombre de vues
+      insight:
+        description: Description
     models:
       restaurant:
         one: Restaurant
@@ -50,7 +51,10 @@ fr:
         other: Articles
       promotion:
         one: Promotion
-        other: Promotions       
+        other: Promotions
+      insight:
+        one: Analyse
+        other: Analyses
     notices:
       default:
         archived_successfully: "%{model} archivé(e) avec succès"
@@ -71,4 +75,4 @@ fr:
       single_page_html:
         one: Affichage de 1-1 sur 1 %{model}
         other: Affichage de %{count} %{model}
-        zero: Aucune entrée trouvé
+        zero: Aucune entrée trouvée

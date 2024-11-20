@@ -1,4 +1,3 @@
----
 en:
   activerecord:
     attributes:
@@ -29,6 +28,8 @@ en:
       promotion:
         name: Promotion Name
         view_count: View Count
+      insight:
+        description: Description
     models:
       restaurant:
         one: Restaurant
@@ -51,6 +52,9 @@ en:
       promotion:
         one: Promotion
         other: Promotions
+      insight:
+        one: Insight
+        other: Insights
     notices:
       default:
         archived_successfully: "%{model} archived successfully"

@@ -50,6 +50,13 @@
             %i.fa-solid.fa-rectangle-ad
             = Promotion.model_name.human(count: 2)
 
+      - if policy(Insight).index?
+        %li.nav-item
+          = link_to insights_path, class: "nav-link #{controller_name == "insights" ? "active" : ""}" do
+            %i.fa-solid.fa-lightbulb
+            = Insight.model_name.human(count: 2)
+
+
       %hr.my-1
 
 

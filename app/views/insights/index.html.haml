@@ -1,0 +1,31 @@
+- model_class = Insight
+- content_for :title do
+  %h1= model_class.model_name.human(count: 2)
+
+- content_for :title_actions do
+  - if policy(Insight).create?
+    = link_to new_insight_url, class: "btn btn-secondary" do
+      %i.fa-solid.fa-plus
+      = t ".new", default: t("helpers.titles.new", model: model_class.model_name.human)
+
+= render "shared/filter", model_class: model_class
+
+%table.table
+  %thead
+    %tr
+      %th= model_class.human_attribute_name(:title)
+      %th
+
+  %tbody
+    - @insights.each do |insight|
+      %tr
+        %td= link_to insight.title, insight_url(insight) 
+        %td.text-nowrap
+          - if policy(insight).edit?
+            = link_to edit_insight_url(insight), class: "btn btn-primary btn-sm mx-1", data: { turbo: false } do
+              %i.fa-solid.fa-pen
+          - if policy(insight).destroy?
+            = link_to insight_url(insight), class: "btn btn-danger btn-sm mx-1", data: { "turbo-method": :delete, turbo_confirm: "Are you sure?" } do
+              %i.fa-solid.fa-trash
+
+= add_pagination @insights

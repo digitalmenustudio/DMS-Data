@@ -8,7 +8,7 @@ class DailyVisitsController < ApplicationController
   add_controller_helpers :daily_visits, only: :index
 
   def index
-    @daily_visits = policy_scope(DailyVisit).where(restaurant: @restaurant).order(date: :asc)
+    @daily_visits = policy_scope(DailyVisit).where(restaurant: @restaurant).order(date: :desc)
   end
 
   def show
