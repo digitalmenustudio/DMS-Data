@@ -7,7 +7,7 @@ class InsightsController < ApplicationController
     add_controller_helpers :insights, only: :index
   
     def index
-      @insights = policy_scope(Insight).where(restaurant: @restaurant).order(created_at: :asc)
+      @insights = policy_scope(Insight).where(restaurant: @restaurant).order(created_at: :desc)
     end
   
     def show
