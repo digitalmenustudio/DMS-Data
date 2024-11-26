@@ -1,7 +1,6 @@
 class Insight < ApplicationRecord
     belongs_to :restaurant
-  
-    # Validations
-    validates :description, presence: true, length: { maximum: 1500 }
+
+    has_rich_text :content
   end
   

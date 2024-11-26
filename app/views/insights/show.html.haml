@@ -7,7 +7,7 @@
   %dt.col-sm-3= model_class.human_attribute_name(:title)
   %dd.col-sm-9= @insight.title
   %dt.col-sm-3= model_class.human_attribute_name(:description)
-  %dd.col-sm-9= @insight.description
+  %dd.col-sm-9= @insight.content
 
 - if policy(@insight).index?
   = link_to insights_path, class: "btn btn-outline-secondary mx-1" do

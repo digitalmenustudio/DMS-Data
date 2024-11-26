@@ -1,5 +1,5 @@
 json.array! @insights do |insight|
   json.id insight.id
   json.title insight.title
-  json.description insight.description
+  json.content insight.content.body
 end
